@@ -11,14 +11,18 @@ const crearCurso=(curso)=>{
 		valor:curso.valor,
 		ide:curso.ide
 	};
+	let duplicado=listaCursos.find(nom=>nom.nombre==curso.nombre);
+	if(!duplicado){
 	listaCursos.push(cur);
 	console.log(listaCursos);
-	guardarCurso();
+	guardarCurso();}else{
+		console.log('Ya existe otro curso con ese nombre');
+	}
 }
 //listar cursos
 const listarCursos=()=>{
 	try{
-		listaCursos=require('Listadocursos.json');
+		listaCursos=require('./Listadocursos.json');
 	}catch(error){
 		listaCursos=[];
 	}
@@ -31,18 +35,21 @@ const crearUsuario=(usuario)=>{
 		cedula:usuario.cedula,
 		contraseña:usuario.contraseña
 	};
+	let duplicado=listaUsuarios.find(ced=>ced.cedula==usuario.cedula);
+	if(!duplicado){
 	listaUsuarios.push(usu);
 	console.log(listaUsuarios);
-	guardarUsuario();
+	guardarUsuario();}else{
+		console.log('Ya existe otro usuario con ese Ide');
+	}
 }
 //listar usuarios
 const listarUsuarios=()=>{
 	try{
-		listaUsuarios=require('Listadousuario.json');
+		listaUsuarios=require('./Listadousuario.json');
 	}catch(error){
 		listaUsuarios=[];
 	}
-	
 }
 //Guardar archivos
 const guardarCurso=()=>{

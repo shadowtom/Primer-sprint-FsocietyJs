@@ -9,3 +9,6 @@ if (argv._[0]=='crear curso'){
 if (argv._[0]=='registrar'){
 	Funciones.crearUsuario(argv);
 }
+if (argv._[0]=='Mostrar usuarios'){
+	Funciones.listarUsuarios(argv);
+}

@@ -48,6 +48,7 @@ const creacionUsuario={
 const argv =require('yargs')
 			.command('crear curso','Crea un curso para ofertar',creacionCurso)
 			.command('registrar','Registrate como usuario',creacionUsuario)
+		//	.command('Mostrar usuarios','Esta es la lista de usuarios')
 			.argv;
 
 module.exports={
