@@ -1,4 +1,5 @@
 const {argv}=require ('./Modulocreacion');
+const Funciones=require('./Funciones');
 
 let comando=argv._[0];
 

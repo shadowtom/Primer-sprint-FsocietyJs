@@ -4,6 +4,7 @@ listaCursos=[];
 listaUsuarios=[];
 
 const crearCurso=(curso)=>{
+	listarCursos();
 	let cur={
 		nombre:curso.nombre,
 		duracion:curso.duracion,
@@ -14,7 +15,17 @@ const crearCurso=(curso)=>{
 	console.log(listaCursos);
 	guardarCurso();
 }
+//listar cursos
+const listarCursos=()=>{
+	try{
+		listaCursos=require('Listadocursos.json');
+	}catch(error){
+		listaCursos=[];
+	}
+	
+}
 const crearUsuario=(usuario)=>{
+	listarUsuarios();
 	let usu={
 		nombre:usuario.nombre,
 		cedula:usuario.cedula,
@@ -24,7 +35,16 @@ const crearUsuario=(usuario)=>{
 	console.log(listaUsuarios);
 	guardarUsuario();
 }
-
+//listar usuarios
+const listarUsuarios=()=>{
+	try{
+		listaUsuarios=require('Listadousuario.json');
+	}catch(error){
+		listaUsuarios=[];
+	}
+	
+}
+//Guardar archivos
 const guardarCurso=()=>{
 	let datosC=JSON.stringify(listaCursos);
 	fs.writeFile('Listadocursos.json',datosC,(err)=>{
