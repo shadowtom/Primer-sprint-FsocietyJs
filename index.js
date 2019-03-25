@@ -3,12 +3,18 @@ const Funciones=require('./Funciones');
 
 let comando=argv._[0];
 
-if (argv._[0]=='crear curso'){
-	Funciones.crearCurso(argv);
-}
-if (argv._[0]=='registrar'){
-	Funciones.crearUsuario(argv);
-}
-if (argv._[0]=='Mostrar usuarios'){
-	Funciones.listarUsuarios(argv);
+switch(comando){
+
+	case 'crear curso':
+		Funciones.crearCurso(argv);
+	break
+	case 'registrar':
+		Funciones.crearUsuario(argv);
+	break
+	case 'Mostrar usuarios':
+		Funciones.listarUsuarios(argv);
+	break
+	default:
+		console.log('No ingreso un comando existente');
+	break
 }

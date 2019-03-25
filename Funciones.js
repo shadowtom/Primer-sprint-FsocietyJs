@@ -21,11 +21,13 @@ const crearCurso=(curso)=>{
 }
 //listar cursos
 const listarCursos=()=>{
-	try{
-		listaCursos=require('./Listadocursos.json');
-	}catch(error){
-		listaCursos=[];
-	}
+	listaCursos();
+	listaCursos.forEach(curso=>{
+		console.log(curso.nombre);
+		console.log('duracion '+curso.duracion);
+		console.log('valor '+curso.valor);
+		console.log('ide '+curso.ide+'\n');
+	});
 	
 }
 const crearUsuario=(usuario)=>{
@@ -45,11 +47,12 @@ const crearUsuario=(usuario)=>{
 }
 //listar usuarios
 const listarUsuarios=()=>{
-	try{
-		listaUsuarios=require('./Listadousuario.json');
-	}catch(error){
-		listaUsuarios=[];
-	}
+	listaUsuarios();
+	listaUsuarios.forEach(usuario=>{
+		console.log(usuario.nombre);
+		console.log('la cedula del usuario es '+usuario.cedula+'\n');
+	});
+
 }
 //Guardar archivos
 const guardarCurso=()=>{
