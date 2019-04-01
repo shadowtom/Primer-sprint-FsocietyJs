@@ -38,7 +38,7 @@ const crearUsuario=(usuario)=>{
 	let usu={
 		nombre:usuario.nombre,
 		cedula:usuario.cedula,
-		contraseña:usuario.contraseña
+		contraseña:usuario.contraseña,
 		rol:usuario.rol
 	};
 	let duplicadoUsu=listaUsuarios.find(ced=>ced.cedula==usuario.cedula);
