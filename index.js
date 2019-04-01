@@ -1,8 +1,10 @@
 const {argv}=require ('./Modulocreacion');
 const Funciones=require('./Funciones');
 
-let comando=argv._[0];
 
+console.log('Inicia el proceso de registro, si ya estas registrado ingresa');
+
+let comando=argv._[0];
 switch(comando){
 
 	case 'crear curso':
@@ -11,6 +13,11 @@ switch(comando){
 	case 'registrar':
 		Funciones.crearUsuario(argv);
 	break
+	
+	case 'Ingresar':
+		Funciones.iniciar(argv);
+	break
+	
 	case 'Mostrar usuarios':
 		Funciones.listarUsuarios(argv);
 	break

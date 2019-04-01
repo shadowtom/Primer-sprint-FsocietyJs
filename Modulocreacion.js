@@ -31,6 +31,10 @@ const ide={
 	demand: true,
 	alias: 'i'
 }
+const rol={
+	demand:true,
+	alias:'r'
+}
 //creacion curso
 const creacionCurso={
 	nombrecurso,
@@ -42,13 +46,35 @@ const creacionCurso={
 const creacionUsuario={
 	nombre,
 	ced,
-	contraseña
+	contraseña,
+	rol
+}
+const registroAspirante={
+	nombrecurso,
+	nombre
+}
+const muestraRegistro={
+	nombre
+}
+const elimina={
+	nombrecurso
+}
+//ingresar
+const inicio={
+	ced,
+	contraseña,
+	rol
 }
 //creacion de rol
 const argv =require('yargs')
-			.command('crear curso','Crea un curso para ofertar',creacionCurso)
+			.command('crearCurso','Crea un curso para ofertar',creacionCurso)
 			.command('registrar','Registrate como usuario',creacionUsuario)
-		//	.command('Mostrar usuarios','Esta es la lista de usuarios')
+			.command('mostrarUsuario','Esta es la lista de usuarios')
+			.command('mostrarCurso','Lista de cursos disponible')
+			.command('registrarAspirante','registro de aspirantes a cursos disponibles',registroAspirante)
+			.command('mostrarRegistro','Cursos en los que se ha registrado',muestraRegistro)
+			.command('eliminarCurso','Eliminacion de Cursos',elimina)
+			.command('Ingresar','ingrese cedula y contraseña',inicio)
 			.argv;
 
 module.exports={
